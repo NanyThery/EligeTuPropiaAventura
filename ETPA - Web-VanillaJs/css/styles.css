@@ -38,3 +38,8 @@ header {
 .story-button-action{
     text-align:center;
 }
+
+.story-div-decisition-made{
+    font-weight: bold;
+    margin: 15px;
+}

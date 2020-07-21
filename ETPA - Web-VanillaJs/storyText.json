@@ -1,0 +1,83 @@
+{"paragraphs": [ 
+    {
+        "id": "text-01",
+        "text": "8.30 de la mañana, verano. Estás de vacaciones. De repente te despiertas sobresaltad@ por el desagradable sonido del timbre de la puerta. Alguien llama. ¿Qué haces?",
+        "options": 
+        [
+            {
+                "id": "a",
+                "optionText": "Seguir durmiendo",
+                "output": "text-01a"
+            },
+            {
+                "id": "b",
+                "optionText": "Bajar a ver quién es",
+                "output": "text-01b"
+            }
+        ]
+    },
+    {
+        "id": "text-01a",
+        "text": "Te tapas con la sábana hasta la cabeza para evitar la luz del sol y te giras hacia la derecha. No tienes ganas de levantarte, ya volverán. <br> Te levantas tarde, aunque te sientes bastante mejor. Aunque parece que esta es tu casa, te sientes como un intruso. Bajas las escaleras hacia la planta baja. <br> Debajo de la puerta alguien ha dejado una nota <p> \" Llámame cuando despiertes: 555-6547\"",
+        "options": 
+        [
+            {
+                "id": "a",
+                "optionText": "Llamar al número de teléfono",
+                "output": "text-02"
+            },
+            {
+                "id": "b",
+                "optionText": "Ignorarlo y seguir con tu vida",
+                "output": "text-03"
+
+            }
+        ]
+    },
+    {
+        "id": "text-01b",
+        "text": "Un poco de mal humor, te levantas, te pones vistes con lo primero que encuentras al lado de la cama y bajas a ver quién está llamando tan insistentemente.<br> Un chica joven te mira con una expresión entre molesta y divertida. <br> - ¡Por fin! - dice - ¡Venga, sube al coche no tenemos tiempo que perder! <br> No tienes mucha opción, te arrastra al coche y se pone en marcha. En un trayecto de unos 15 minutos, completamente en silencio y confusos, llegáis frente a una casa sin nada de especial. Parece una simple casa residencial. <br> - Nos están esperando - dice la chica señalando a un grupo de tres personas que esperan junto a la puerta. <br> Empiezas a ponerte nervios@. Por alguna razón todos te conocen, pero tú a ellos no...",
+        "options": 
+        [
+            {
+                "id": "a",
+                "optionText": "Preguntar quién eres",
+                "output": "text-04"
+            },
+            {
+                "id": "b",
+                "optionText": "Salir corriendo",
+                "output": "text-05"
+            }
+        ]
+    },
+    {
+        "id": "text-02",
+        "text": "Te ha costado un tiempo encontrar el teléfono móvil. Es raro que no le hayas puesto ninguna contraseña ni tampoco un pin de acceso, tienes que arreglar eso más tarde. Con todo, menos mal que no lo has hecho, porque eres incapaz de acordarte de cuál era, si es que tenías uno. <br> - ¡Por fin!, te ha costado, ¿eh? - dice la voz de una chica al otro lado del teléfono - en 20 minutos estoy allí. Prepárate para salir. <br> Estás completamente confus@, parecía conocerte pero no te sonaba de nada su voz. Te vistes con lo primero que encuentras por la habitación, cuando suena el timbre nuevamente.<br>  Un chica joven te mira con una expresión entre molesta y divertida. Parece que es la chica del teléfono. <br> - Podrías haberte peinado... - dice -¡Venga, sube al coche no tenemos tiempo que perder! <br> No tienes mucha opción, te arrastra al coche y se pone en marcha. En un trayecto de unos 15 minutos, completamente en silencio y confusos, llegáis frente a una casa sin nada de especial. Parece una simple casa residencial. <br> - Nos están esperando - dice la chica señalando a un grupo de tres personas que esperan junto a la puerta. <br> Empiezas a ponerte nervios@. Por alguna razón todos te conocen, pero tú a ellos no...",
+        "options": 
+        [
+            {
+                "id": "a",
+                "optionText": "Preguntar quién eres",
+                "output": "text-04"
+            },
+            {
+                "id": "b",
+                "optionText": "Salir corriendo",
+                "output": "text-05"
+            }
+        ]
+    },
+    {
+        "id": "text-04",
+        "text": "- Vaya - dice la chica mientras te acompaña al interior de la vivienda - parece que esta vez te está costando más volver que otras... esto empieza a ser preocupante. No te preocupes, es cuestión de tiempo que todo vuelva a tener sentido, es mejor que no lo forcemos. <br> Lo que parecía una casa normal, resultó ser una tapadera para unas instalaciones subterráneas de la leche. Un super laboratorio se abre ante ti cuando bajais en un pequeño ascensor que hay junto a las escaleras enmoquetadas.",
+        "options": []
+    },
+    {
+        "id": "text-04",
+        "text": "Fin",
+        "options": []
+    }
+
+]
+}
