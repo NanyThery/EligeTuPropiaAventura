@@ -1,0 +1,49 @@
+body {
+    display: flex;
+    flex-flow: column;
+    background-color: gray;
+    align-items: center;
+    font-family: monospace;
+}
+
+header {
+    width: 85%;
+    background-color: white;
+    text-align: center;
+    margin: 15px 0;
+}
+
+#story-holder {
+    font-size: 16px;
+    line-height: 1.5rem;
+    display:flex;
+    flex-flow: column;
+    width: 85%;
+    background-color: white;
+    padding: 30px;
+    margin: 15px 0;
+    box-sizing: border-box;
+}
+
+#story-options {
+    margin: 35px 0;
+}
+
+#story-options-button{
+    margin: 25px 0 0 0;
+    padding: 15px;
+    font-size: 16px;
+}
+
+.story-button-action{
+    text-align:center;
+}
+
+.story-div-decisition-made{
+    font-weight: bold;
+    margin: 15px;
+}
+.story-options-choose{
+    font-weight: bold;
+    
+}

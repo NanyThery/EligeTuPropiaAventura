@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Elige tu propia aventura</title>
+</head>
+<body>
+
+    <header class="story-title">
+        <h1>La expedición temporal</h1>
+    </header>
+
+    <div id="story-holder">
+        <div id="story-text">
+            <div id="text-01">
+                <p>"Te despiertas sobresaltad@ por el odioso ruido del timbre. Es extraño, no recordabas que tu timbre sonara así. Abres los ojos. Son las 8.30 de la mañana, del 2 de junio de 2058, hace calor y el sol parte la tierra. Además hay un rayo de sol que esta cocinando tu pie lentamente y ahora que te has despertado eres consciente de él. A pesar de eso, sientes que tu cuerpo es de plomo, estás cansad@. Por más que intentas hacer memoria, no recuerdas por qué. Con esta pesadez te debates entre seguir durmiendo hasta que tu cuerpo quiera o bajar a abrir."</p>
+            </div>
+        </div>
+        <div id="story-options">
+            <p class="story-options-choose">Elige una opción:</p>
+            <input type="radio" name="options" value="opt-a" id="a"> <label for="opt-a" id="opt-a-text">Seguir durmiendo</label><br>
+            <input type="radio" name="options" value="opt-b" id="b"> <label for="opt-b" id="opt-b-text">Levantarse a abrir la puerta</label><br>
+        </div>
+        <div class="story-button-action"></div>
+            <input id="story-options-button" type="button" onclick="getOption()" value="Siguiente"> <br>
+        </div>
+    </div>
+    <script type="text/javascript" src="index.js"></script>
+</body>
+</html>
