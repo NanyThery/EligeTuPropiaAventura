@@ -1,126 +1,78 @@
-let story;
+let userName = window.prompt(`¿Cómo se llama el/la protagonista de la historia?`)
+let text1 = `8.30 de la mañana, verano. Estás de vacaciones. De repente te despiertas sobresaltad@ por el desagradable sonido del timbre de la puerta. Alguien llama. ¿Qué haces?`
+let text1OptionA= `Lo ignoro y sigo durmiendo`
+let text1OptionB= `Me levanto a ver quién es`
 
-fetch("./storyText.json")
-    .then(function(resp){
-        return resp.json();
-    }).then( function (data) {
-        story = data;
-    });
+let text2 = `Te tapas con la sábana hasta la cabeza para evitar la luz del sol y te giras hacia la derecha. No tienes ganas de levantarte, ya volverán. Sin embargo, quein llama no está dispuesto a rendirse. Parece que ignorarlo no es una opcion. Así que te levantas, un poco de mal humor.`
+let text3 = `Te pones algo encima y bajas las escaleras. Mueves la mirilla de la puerta y del otro lado ves a una chica que no conoces. La mirilla no te deja apreciar muchos detalles, pero hay algo en ella que te resulta extraño, como que no encaja. Parece inofensiva, así que abres la puerta. - ${userName}, ¡por fin! Llevamos esperándote media hora, ¿qué estabas haciendo?` 
+let text3optionA = `Estaba durmiendo`
+let text3optionB = `¿quién eres?`
+
+let text4 = `¿Cómo que quién soy?, ¿estás tont@?`
+let text5 = `La chica te mira con una expresión entre divertida y molesta. Está claro que te conoce, pero tú a ella no... crees que no, al menos. Asiente con la cabeza y te dice:
+¡Venga, ${userName}. No podemos perder más tiempo. La misión está a punto de empezar!
+La chica te toma de la mano y casi te arrastra hasta el coche con chófer, dentro está esperando otra persona que te mira con despreocupación, pero un poco irritada. El coche arranca. Miras a tu alrededor todavía muy confundid@ ¿Cómo has llegado hasta aquí?¿Por qué esta gente te conoce y a ti no? ¿Por qué no te negaste a subir? En este punto, no puedes negar que tu aburrimiento estival está exigiendo aventuras. Pero quizás esto sea demasiado.`
+
+let text5optionA = `Esperar y ver a dónde te lleva el coche`
+let text5optionB = `Saltar del coche en marcha`
+
+let text6= `A partir de aquí, la historia de ${userName} la escribes tú. Continúala con tu ejercicio de "Elige tu Propia Aventura!"`
+let text7= `Abres la puerta del coche en marcha. Tus acompañantes te miran con una expresión de horror e incomprensión. No parece que seas un prisionero. Tampoco nadie te detiene. Saltas del coche en marcha...`
 
 
-function getOption () {
-    let selectedOption;
-    let optionA = document.getElementById("a").checked;
-    let optionB = document.getElementById("b").checked;
-    let currentParagraph = document.getElementById("story-text").lastElementChild.id;
 
+window.alert(text1);
+let optionText1= window.prompt(`Elige A o B: a- Seguir durmiendo // b- Bajar a abrir la puerta`);
+let optionText2;
+let optionText3;
 
-    if(!optionA && !optionB){
-        window.alert('Selecciona una opción para que la historia pueda continuar');
-        return;
-    }
-
-    if (optionA) {
-        selectedOption = "a";
-    }else{
-        selectedOption = "b";
-    }
-
-    continueStory(selectedOption, currentParagraph);
-
-}
-
-//This function handles the following steps in the story
-function continueStory(selectedOption, currentParagraph){
-    let nextTextId = getNextText(selectedOption, currentParagraph);
-    let selectedOptionText = getSelectedOptionText(selectedOption, currentParagraph); //Get text to build h2 in the page.
-
-    createNewParagraph(nextTextId, selectedOptionText); // shows the new text and h2 on the website.
-    let optionsAreChanged = changeOptions (nextTextId); // changes the options if available. Returns false if there are no more options.
-
-    if(!optionsAreChanged){
-        changeButtonAction();                           // Change button text and function in order to reload the adventure.
-    }
-        
-}
-
-/*Gets the current object and checks if it has more options to retrieve*/
-
-function getNextText (selectedOption, currentText) {
-    
-    let currentTextObject = story.paragraphs.find( ({id}) => id == currentText);
-    console.log(currentTextObject.options)
-
-    if (currentTextObject.options.length != 0){
-        let nextTextId = currentTextObject.options.find(({id}) => id == selectedOption).output;
-        return nextTextId;
-    }
-    
-    return null
-    
-}
-
-function getSelectedOptionText(selectedOption, currentText){
-    let currentTextObject = story.paragraphs.find( ({id}) => id == currentText);
-    let selectedOptionText = currentTextObject.options.find(({id}) => id == selectedOption).optionText;
-
-    return selectedOptionText;
-}
-
-function getNewText (nextTextId){
-    return story.paragraphs.find( ({id}) => id == nextTextId).text;
-}
-
-function createNewParagraph (nextTextId,selectedOptionText) {
-
-    let newSection = document.createElement('div');
-    newSection.setAttribute("id", nextTextId);
-    
-    let newParagraphTitle = document.createElement('h2');
-    newParagraphTitle.setAttribute("class", "story-div-decisition-made");
-    newParagraphTitle.innerHTML = selectedOptionText;
-    newSection.appendChild(newParagraphTitle);
-
-    let newParagraphText = document.createElement('p');
-    newParagraphText.innerHTML = getNewText(nextTextId);
-    newSection.appendChild(newParagraphText);
-
-    document.getElementById("story-text").appendChild(newSection);
-
-}
-
-function changeOptions (nextTextId){
-    let NextTextObject = story.paragraphs.find( ({id}) => id == nextTextId);
-
-    if (NextTextObject.options.length == 0){
-        let options = document.getElementById("story-options");
-        document.getElementById("story-holder").removeChild(options);
-
-        return null;
-    }
-    
-    let optionA = NextTextObject.options.find(({id}) => id == 'a').optionText;
-    let optionB = NextTextObject.options.find(({id}) => id == 'b').optionText;
-
-    document.getElementById("opt-a-text").innerHTML = optionA;
-    document.getElementById("opt-b-text").innerHTML = optionB;
-
-        return true; 
-
-}
-
-function changeButtonAction (){
-    let button = document.getElementById("story-options-button");
-    button.setAttribute("value", "Jugar otra vez");
-    button.setAttribute("onClick", "playAgain()");
-
-}
-
-function playAgain(){
-    location.reload();
+switch (optionText1) {
+    case 'a':
+    case 'A':
+        window.alert(text2 + ' ' + text3);
+        optionText2 = window.prompt(`Elige A o B:  a- estaba durmiendo // b-¿quién eres?`)
+        break;
+    case 'b':
+        window.alert(text3);
+        optionText2 = window.prompt(`Elige A o B:  a- estaba durmiendo // b-¿quién eres?`)
+        break;
+    default:
+            window.alert('Vaya, esa no es una opción válida. Pulsa Aceptar para volver a empezar')
+            location.reload();
+            break;
 }
 
 
+    switch (optionText2) {
+    case 'a':
+    case 'A':
+        window.alert(text5);
+        optionText3 = window.prompt(`Elige A o B:  a- Esperar y ver dónde te lleva el coche // b- Saltar del coche en marcha`)
+        break;
+    case 'B':
+    case 'b':
+        window.alert(text4 + ' ' + text5);
+        optionText3 = window.prompt(`Elige A o B:  a- Esperar y ver dónde te lleva el coche // b- Saltar del coche en marcha`)
+        break;
+        default:
+            window.alert('Vaya, esa no es una opción válida. Aprieta F5 para volver a empezar');
+            break;
+}
 
 
+    switch (optionText3){
+    case 'a':
+        case 'A':
+            window.alert(text6);
+            break;
+        case 'B':
+        case 'b':
+            window.alert(text7 + ' ' + text6);
+            break;
+        default:
+            window.alert('Vaya, esa no es una opción válida. Aprieta F5 para volver a empezar');
+            break;
+}
+
+document.getElementById('title').innerHTML = 'The end';
 
