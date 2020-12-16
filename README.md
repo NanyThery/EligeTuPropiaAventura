@@ -1,4 +1,4 @@
-# ElijeTuPropiaAventura
+# EligeTuPropiaAventura
 
 Este juego tiene su origen en unas novelas de nuestra infancia donde la historia te permitía tomar decisiones y recorrer diferentes hilos argumentales. En este repositorio iré poniendo diferentes versiones del juego hechas con distintas arquitecturas o estructuras. Colaboraciones en otros lenguajes/soluciones son más que bienvenidas. La idea es que este repo siga siendo un buen proyecto de iniciación para cualquiera.
 
